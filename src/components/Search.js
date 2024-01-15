@@ -6,7 +6,7 @@ const Search = () => {
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => searchRes(), 200);
+    const timer = setTimeout(() => searchRes(), 500);
 
     return () => {
       clearTimeout(timer);
