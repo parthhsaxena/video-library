@@ -1,13 +1,17 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ showData }) => {
   return (
     <div className="p-12">
-      <ul className="bg-gray-200 rounded-xl h-36 w-80 p-2">
-        <li className="text-2xl text-bold text-gray-600"></li>
-        <li className="text-lg text-gray-600">Genres: </li>
-        <li className="text-lg text-gray-600">Language: </li>
-        <li className="text-lg text-gray-600">Premiered: </li>
+      <ul className="bg-gray-200 rounded-xl  w-80 p-2">
+        <li className="text-2xl text-bold text-gray-600">{showData.name}</li>
+        <li className="text-lg text-gray-600">
+          Genres: {showData.genres.join(", ")}
+        </li>
+        <li className="text-lg text-gray-600">Language: {showData.language}</li>
+        <li className="text-lg text-gray-600">
+          Premiered: {showData.premiered}
+        </li>
       </ul>
     </div>
   );

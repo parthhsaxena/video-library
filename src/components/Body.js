@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
 const Body = () => {
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const [libData, setLibData] = useState([]);
 
   const fetchData = async () => {
     const data = await fetch("https://api.tvmaze.com/shows");
     const json = await data.json();
-    console.log(json);
+    setLibData(json);
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -21,7 +22,9 @@ const Body = () => {
         </p>
       </div>
       <div className="flex flex-wrap p-12">
-        <Card />
+        {libData.map((s) => (
+          <Card key={s.id} showData={s} />
+        ))}
       </div>
     </div>
   );
