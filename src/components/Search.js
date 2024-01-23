@@ -7,7 +7,6 @@ const Search = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => searchRes(), 500);
-
     return () => {
       clearTimeout(timer);
     };
@@ -19,7 +18,7 @@ const Search = () => {
     );
     const json = await data.json();
     setSuggestions(json);
-    console.log(suggestions);
+    // console.log(suggestions);
   };
 
   return (
