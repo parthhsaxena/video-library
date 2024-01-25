@@ -19,6 +19,7 @@ const useSearch = () => {
     setSuggestions(json);
     // console.log(suggestions);
   };
+  return suggestions;
 };
 
 export default useSearch;
